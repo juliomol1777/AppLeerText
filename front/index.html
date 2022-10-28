@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         function test() {
+
+            
+             fetch("http://localhost:3300/api")
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data);
+                    document.getElementById("h1Id").innerHTML = data.texto 
+                    /*
+                    const listado = data.objeto;
+                    listado.map(item=>{
+                        document.getElementById("h1Id").innerHTML += item.texto + "<hr>";
+                    })*/
+                }).catch(error=>{
+                    console.log(error);
+                })
+         }
+    </script>
+</head>
+<body>
+    <button onclick="test()">HOLA</button>
+    <h1 id="h1Id">
+
+
+    </h1>
+</body>
+</html>
